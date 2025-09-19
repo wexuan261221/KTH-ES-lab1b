@@ -1,0 +1,183 @@
+V "GNAT Lib v10"
+M P W=b
+P TF  ZX
+
+RN
+RV NO_DELAY
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_TASK_HIERARCHY
+RV NO_TASKING
+RV STATIC_PRIORITIES
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV SPARK_05
+RV MAX_TASKS=1+
+
+U periodictasks_priority%b  rms.adb		ec339aef NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+Z ada.real_time.delays%s  a-retide.adb		a-retide.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.fixed_io%s
+Z ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+Z ada.text_io.generic_aux%s  a-tigeau.adb	a-tigeau.ali
+Z ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+Z ada.text_io.integer_io%s
+Z interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.arith_64%s	s-arit64.adb		s-arit64.ali
+Z system.exp_lli%s	s-explli.adb		s-explli.ali
+Z system.img_real%s	s-imgrea.adb		s-imgrea.ali
+Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-flteio.ads		20230707070819 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20230707070818 0240fc73 ada.real_time%s
+D a-retide.ads		20230707070818 081cdaa4 ada.real_time.delays%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-tifiio.ads		20230707070819 ad0445c9 ada.text_io.fixed_io%s
+D a-tifiio.adb		20230707070819 e4f802ff ada.text_io.fixed_io%b
+D a-tiflau.ads		20230707070819 c0393f21 ada.text_io.float_aux%s
+D a-tiflio.ads		20230707070819 bf196650 ada.text_io.float_io%s
+D a-tigeau.ads		20230707070819 9eaed207 ada.text_io.generic_aux%s
+D a-tiinau.ads		20230707070819 8114c8e4 ada.text_io.integer_aux%s
+D a-tiinio.ads		20230707070819 390edddb ada.text_io.integer_io%s
+D a-tiinio.adb		20230707070819 df9cd7af ada.text_io.integer_io%b
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-c.ads		20230707070819 5421119b interfaces.c%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D rms.adb		20250919151744 a10df451 periodictasks_priority%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-atacco.ads		20230707070819 4c36d12f system.address_to_access_conversions%s
+D s-arit64.ads		20230707070819 404da5f2 system.arith_64%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-explli.ads		20230707070819 ba60219a system.exp_lli%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-imgrea.ads		20230707070819 c7a851e2 system.img_real%s
+D s-linux.ads		20230707070818 ed0b8aee system.linux%s
+D s-multip.ads		20230707070819 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20250422025654 56602da1 system.os_constants%s
+D s-osinte.ads		20250422025654 baabc537 system.os_interface%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stausa.ads		20230707070819 017a0a05 system.stack_usage%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20230707070818 2b3f8252 system.task_info%s
+D s-taspri.ads		20230707070818 f40ac08d system.task_primitives%s
+D s-taprop.ads		20230707070818 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20230707070818 b9d612e2 system.tasking%s
+D s-tassta.ads		20230707070818 cca55c94 system.tasking.stages%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [periodictasks_priority standard 8 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 22|3r6 3r23 4r6 6r6 6r25 9r31 10r26 87r25
+X 3 a-flteio.ads
+20K13*Float_Text_IO[13|46] 22|4w10 87r29
+X 5 a-reatim.ads
+39K13*Real_Time 185e18 22|6w10 6r29
+49O9*Time<duration> 22|12r12 47r14 48r26 49r29 52r36
+52N4*Time_Unit 22|23r36
+54O9*Time_Span<duration> 22|18r32 20r16 50r28 53r23
+58o4*Time_Span_Unit{54O9} 22|23r59
+61V13*Clock{49O9} 22|58s28 71s38 114s13
+65V14*"+"{49O9} 22|58s34 65s26 66s54
+71V14*"-"{54O9} 22|72s47 81s61 83s63 89s58
+78V14*">"{boolean} 22|90r38
+93V14*"/"{integer} 22|23s58
+105V14*">"{boolean} 22|74r37
+110V13*To_Duration{duration} 22|81s41 83s41 85s41 89s41
+119V13*Milliseconds{54O9} 22|58s36 63s25 65s28 66s56
+130I9*Seconds_Count<long_long_integer> 22|19r14
+139U14*Split 22|22s17
+142V13*Time_Of{49O9} 22|22s23
+X 9 a-textio.ads
+57K13*Text_IO 727e16 22|3w10 3r27 9r35 10r30
+86I12*Field{integer}
+465U14*Put 22|78s25 80s25 82s25 84s25 86s25 88s25 91s33 93s33
+508U14*Put_Line 22|95s10
+X 10 a-tifiio.ads
+26k21*Fixed_IO 92e25 22|9r43
+62U14 Put 22|81s37[9] 83s37[9] 85s37[9] 89s37[9]
+X 13 a-tiflio.ads
+82U14*Put 22|87s43[3|20]
+84i7 Fore{9|86I12} 22|87r63[3|20]
+85i7 Aft{9|86I12} 22|87r74[3|20]
+86i7 Exp{9|86I12} 22|87r84[3|20]
+X 16 a-tiinio.ads
+46k21*Integer_IO 108e27 22|10r38
+80U14 Put 22|79s32[10] 92s40[10]
+X 19 interfac.ads
+55I9*Integer_64<long_long_integer>
+X 22 rms.adb
+8U11*PeriodicTasks_Priority 8b11 116l5 116t27
+9K12 Duration_IO[10|26] 81r25 83r25 85r25 89r25
+10K12 Int_IO[16|46] 79r25 92r33
+12o4 Start{5|49O9} 81r63 83r65 89r60 114m4
+13i9 Calibrator{integer} 69r44
+15i9 Warm_Up_Time{integer} 104r22 110r22 111r22
+18V18 To_Float{float} 18b18 18>27 24l8 24t16 73s85 87s47
+18o27 TS{5|54O9} 22r34
+19i9 SC{5|130I9} 22m39 23r30
+20o9 Frac{5|54O9} 22m43 23r54
+27V18 F{integer} 27>20 29b13 38l8 38t9 69s42
+27i20 N{integer} 29b15 32r23
+30i7 X{integer} 34m13 34r18 37r14
+32i11 Index{integer}
+33i14 I{integer} 34r22
+41T14 T 41d16 41d29 41d44 41d60 42d74 42d102 44e7 46b14 99l8 99t9 104r13
+. 110r13 111r13
+41i16 Id{integer} 79r36 92r44
+41i29 Prio{integer} 43r23
+41i44 Phase{integer} 58r49
+41i60 Period{integer} 65r41
+42i74 Computation_Time{integer} 68r37
+42i102 Relative_Deadline{integer} 66r69
+47o7 Next{5|49O9} 60m17 65m10 89r53 96r36
+48o17 Release{5|49O9} 58m17 59r29 60r25 65r18 66r46 72r49 81r53 96m25 97r22
+49o17 Completed{5|49O9} 71m25 72r37 83r53 90r28
+50o17 Response{5|54O9} 72m25 73r94 74r28 75r41 85r53
+51f17 Average_Response{float} 62m17 73m25 73r66
+52o17 Absolute_Deadline{5|49O9} 66m25 90r40
+53o17 WCRT{5|54O9} 63m17 74r39 75m33 87r56
+54i7 Dummy{integer} 69m33
+55i17 Iterations{integer} 61m17 73r52 73r113 77m25 77r39
+68i29 I{integer}
+104t4 Task_1{41T14}
+110t4 Task_2{41T14}
+111t4 Task_3{41T14}
+X 25 s-arit64.ads
+44I12*Int64{19|55I9}
+54V13*Multiply_With_Ovflo_Check{44I12} 55i<c,__gnat_mulv64>22
+X 39 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+
