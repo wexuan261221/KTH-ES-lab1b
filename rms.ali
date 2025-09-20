@@ -23,7 +23,7 @@ RV NO_IMPLEMENTATION_ATTRIBUTES
 RV SPARK_05
 RV MAX_TASKS=1+
 
-U periodictasks_priority%b  rms.adb		ec339aef NE OO SU
+U periodictasks_priority%b  rms.adb		371eaf55 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
@@ -68,7 +68,7 @@ D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20230707070819 5ab55268 interfaces%s
 D i-c.ads		20230707070819 5421119b interfaces.c%s
 D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
-D rms.adb		20250919151744 a10df451 periodictasks_priority%b
+D rms.adb		20250919194047 7a20c1eb periodictasks_priority%b
 D system.ads		20230707070819 4635ec04 system%s
 D s-atacco.ads		20230707070819 4c36d12f system.address_to_access_conversions%s
 D s-arit64.ads		20230707070819 404da5f2 system.arith_64%s

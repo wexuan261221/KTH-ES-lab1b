@@ -5,12 +5,12 @@ with Ada.Float_Text_IO;
 
 with Ada.Real_Time; use Ada.Real_Time;
 
-procedure OverloadDetection is
+procedure PeriodicTasks_Priority is
    package Duration_IO is new Ada.Text_IO.Fixed_IO(Duration);
    package Int_IO is new Ada.Text_IO.Integer_IO(Integer);
 	
    Start : Time; -- Start Time of the System
-	Calibrator: constant Integer := 1000; -- Calibration for correct timing
+	Calibrator: constant Integer := 3500; -- Calibration for correct timing
 	                                     -- ==> Change parameter for your architecture!
 	Warm_Up_Time: constant Integer := 100; -- Warmup time in milliseconds
 	
@@ -97,65 +97,58 @@ procedure OverloadDetection is
          delay until Release;
       end loop;
    end T;
-   task Helper is
-   pragma Priority(1);
-end Helper;
+   
+   task helper is
+      pragma Priority(1);
+   end;
 
-   task WatchDog is
+   task watchDog is
       pragma Priority(20);
-      entry Reset;
-   end WatchDog;
+      entry reset;
+   end;
 
-   task body Helper is
-      Window : constant Time_Span := Milliseconds(1200);
-      Next   : Time := Clock + Milliseconds(Warm_Up_Time) + Window;
-   begin
-      delay until Next;
+   task body helper is
+	Next : Time;
+    begin
+      Next := Clock + Milliseconds(10);
       loop
-         WatchDog.Reset;
-         Next := Next + Window;
-         delay until Next;
-      end loop;
-   end Helper;
+	    Next := Next + Milliseconds(1200);
+        watchDog.reset;
+		delay until Next;
+    end loop;
+   end helper;
 
-   task body WatchDog is
-      Window     : constant Time_Span := Milliseconds(1200);
-      Next_Check : Time := Clock + Milliseconds(Warm_Up_Time) + Window;
-      Seen       : Boolean := False;
+   task body watchDog is
+   	Release : Time;
    begin
-      delay until Next_Check;
+      Release := Clock + milliseconds(Warm_Up_Time);
+      delay until Release;
       loop
-         select
-            accept Reset do
-               Seen := True;
-            end Reset;
-         or
-            delay until Next_Check;
-            if not Seen then
-               Put_Line("warning, overload!");
-            else
-               Put_Line("watchdog ok");
-            end if;
-            Seen       := False;
-            Next_Check := Next_Check + Window;
-         end select;
+	  select
+		accept reset do
+		   null;
+		end reset;
+	  or 
+		delay 1.2;
+		Put_Line("warning, overload!");
+	  end select;
       end loop;
-   end WatchDog;
+   end watchDog;
 
    -- Running Tasks
 	-- NOTE: All tasks should have a minimum phase, so that they have the same time base!
 	
    Task_1 : T(1, 5, Warm_Up_Time, 300, 100, 300); -- ID: 1
-	                                                   -- Priority: 5
+	                                                   -- Priority: 20
                                                       --	Phase: Warm_Up_Time (100)
-	                                                   -- Period 300, 
-	                                                   -- Computation Time: 100 (if correctly calibrated) 
-	                                                   -- Relative Deadline: 300
-	 Task_2 : T(2, 4, Warm_Up_Time, 400, 100, 400);
+	                                                   -- Period 2000, 
+	                                                   -- Computation Time: 1000 (if correctly calibrated) 
+	                                                   -- Relative Deadline: 2000
+   Task_2 : T(2, 4, Warm_Up_Time, 400, 100, 400);
    Task_3 : T(3, 3, Warm_Up_Time, 600, 100, 600);
    Task_4 : T(4, 2, Warm_Up_Time, 1200, 200, 1200);	
 -- Main Program: Terminates after measuring start time	
 begin
    Start := Clock; -- Central Start Time
    null;
-end OverloadDetection;
+end PeriodicTasks_Priority;

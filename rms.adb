@@ -10,7 +10,7 @@ procedure PeriodicTasks_Priority is
    package Int_IO is new Ada.Text_IO.Integer_IO(Integer);
 	
    Start : Time; -- Start Time of the System
-	Calibrator: constant Integer := 3550; -- Calibration for correct timing
+	Calibrator: constant Integer := 3500; -- Calibration for correct timing
 	                                     -- ==> Change parameter for your architecture!
 	Warm_Up_Time: constant Integer := 100; -- Warmup time in milliseconds
 	
